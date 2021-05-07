@@ -1,0 +1,42 @@
+.board{
+    background-image: url("bg.png");
+    border: 10px solid black;
+    display: grid;
+    grid-template-rows: repeat(20,1fr);
+    grid-template-columns: repeat(20,1fr);
+    width: 100vmin;
+    height: 80vmin;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mario{
+    background-image: url("mario.png");
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.villan{
+    background-image: url("villan.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.brickBody{
+    background-image: url("brick.png");  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.coin{
+    background-image: url("coin.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
