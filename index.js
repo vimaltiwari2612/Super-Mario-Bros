@@ -222,3 +222,6 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
+
+
+alert('This is a clone of Super Mario Bros.\n Press SpaceBar/Swipe up to Jump. Enjoy!!');
