@@ -1,3 +1,6 @@
+const bgMusic = new Audio('bg.mp3');
+const deadMusic = new Audio('dead.mp3');
+const coinMusic = new Audio('coin.mp3');
 let lastPaintTime = 0;
 let a = 1;
 let b = 19;
@@ -124,6 +127,7 @@ updateScore = () =>{
     if(mario.x == coin.x && mario.y == coin.y){
         score++;
         coin.y = 0;
+        coinMusic.play();
         if(coinHideIntervalId == null){
             coinHideIntervalId = setInterval(function(){ 
                 coin.y = 19;
@@ -134,10 +138,13 @@ updateScore = () =>{
 
 refreshBoard = () => {
     if(hasCollisionHappened()){
+        bgMusic.pause();
+        deadMusic.play();
         alert('Game Over! Your score is '+score+'.\nLet\'s Play again.');
         score=0;
         villan = {x:19,y:Math.round(8 + (19 - 8) * Math.random())};
         coin = {x : 16, y:Math.round(8 + (19 - 8) * Math.random())};
+        bgMusic.play();
     }
     //collect coin
     updateScore();
@@ -150,6 +157,7 @@ refreshBoard = () => {
 }
 
 renderGame = (curentTime) =>{
+    bgMusic.play();
     window.requestAnimationFrame(renderGame);
     if((curentTime - lastPaintTime) /1000 < (1 / speed)){
         return;
