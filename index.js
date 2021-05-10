@@ -70,6 +70,11 @@ createBoard = (board) =>{
 
 }
 
+
+killed = () =>{
+    villan.y = 22;
+}
+
 jump = () =>{
     
     //up
@@ -78,6 +83,10 @@ jump = () =>{
         marioJumpStatus++;
         if(marioJumpIntervalId == null){
             marioJumpIntervalId = setInterval(function(){ mario.x += jumpIndex;
+                //jump on head of villan
+                if(villan.x == mario.x){
+                    killed();
+                }
                 marioJumpStatus++; clearInterval(marioJumpIntervalId); marioJumpIntervalId = null}, 500);
         }
     }
@@ -122,6 +131,7 @@ hasCollisionHappened = () => {
     }
     return false;
 }
+
 
 updateScore = () =>{
     if(mario.x == coin.x && mario.y == coin.y){
