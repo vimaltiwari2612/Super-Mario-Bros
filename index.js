@@ -82,7 +82,7 @@ jump = () =>{
         mario.x -= jumpIndex;
         marioJumpStatus++;
         if(marioJumpIntervalId == null){
-            marioJumpIntervalId = setInterval(function(){ mario.x += jumpIndex;
+            marioJumpIntervalId = setInterval(function(){ mario.x = 19;
                 //jump on head of villan
                 if(villan.x == mario.x){
                     killed();
